@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>804</width>
+    <height>557</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>530</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget{
+	background-color: white;
+}</string>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tab_parser">
+     <attribute name="title">
+      <string>Парсер</string>
+     </attribute>
+     <widget class="QFrame" name="frame_head_parser">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background-color: #8B808D;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="lineEdit_city">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>10</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	background-color: white; /* Красный цвет фона */
+    color: black; /* Белый цвет текста */
+	border: 1px solid #3B383D;
+    border-radius: 2px; /* Радиус скругления в пикселях */
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>Населенный пункт</string>
+       </property>
+       <property name="cursorMoveStyle">
+        <enum>Qt::LogicalMoveStyle</enum>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_letter_route">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>10</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	background-color: white; /* Красный цвет фона */
+    color: black; /* Белый цвет текста */
+	border: 1px solid #3B383D;
+    border-radius: 2px; /* Радиус скругления в пикселях */
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="placeholderText">
+        <string>Буква</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_num_route">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>10</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	background-color: white; /* Красный цвет фона */
+    color: black; /* Белый цвет текста */
+	border: 1px solid #3B383D;
+    border-radius: 2px; /* Радиус скругления в пикселях */
+}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="placeholderText">
+        <string>Номер маршрута</string>
+       </property>
+      </widget>
+      <widget class="QToolButton" name="toolButton">
+       <property name="geometry">
+        <rect>
+         <x>670</x>
+         <y>10</y>
+         <width>111</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QToolButton {
+    background-color: white; /* цвет фона */
+    color: #3B383D; /* цвет текста */
+	border: 1px solid #3B383D;
+    border-radius: 2px; /* Радиус скругления в пикселях */
+}
+QToolButton:hover {
+    background-color: #3B383D; /* цвет фона */
+    color: white; /* цвет текста */
+	border: 1px solid white;
+    border-radius: 2px; /* Радиус скругления в пикселях */
+}</string>
+       </property>
+       <property name="text">
+        <string>Запустить парсер</string>
+       </property>
+       <property name="autoRepeat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_parser_set_transport">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>10</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox {
+    background-color: white; /* Серый цвет фона */
+    color: #3B383D; /* Черный цвет текста */
+    border: 1px solid #3B383D; /* 1 пиксель серая сплошная граница */
+    border-radius: 2px; /* Радиус скругления в пикселях */
+    padding: 5px; /* Внутренний отступ внутри элемента */
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 10px; /* Ширина кнопки выпадающего списка */
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+}
+
+QComboBox QAbstractItemView {
+    background-color: white; /* Белый цвет фона выпадающего списка */
+    color: #3B383D; /* Черный цвет текста в выпадающем списке */
+    border: 1px solid #3B383D; /* 1 пиксель серая сплошная граница выпадающего списка */
+    selection-background-color: #7A686D; /* Синий цвет фона для выбранного элемента в списке */
+    selection-color: #FFFFFF; /* Белый цвет текста для выбранного элемента в списке */
+}
+</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_parser_set_regions">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>231</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox {
+    background-color: white; /* Серый цвет фона */
+    color: #3B383D; /* Черный цвет текста */
+    border: 1px solid #3B383D; /* 1 пиксель серая сплошная граница */
+    border-radius: 2px; /* Радиус скругления в пикселях */
+    padding: 5px; /* Внутренний отступ внутри элемента */
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 10px; /* Ширина кнопки выпадающего списка */
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+}
+
+QComboBox QAbstractItemView {
+    background-color: white; /* Белый цвет фона выпадающего списка */
+    color: #3B383D; /* Черный цвет текста в выпадающем списке */
+    border: 1px solid #3B383D; /* 1 пиксель серая сплошная граница выпадающего списка */
+    selection-background-color: #7A686D; /* Синий цвет фона для выбранного элемента в списке */
+    selection-color: #FFFFFF; /* Белый цвет текста для выбранного элемента в списке */
+}
+</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_main_parser">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>51</y>
+        <width>800</width>
+        <height>450</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background-color: #EDEBE1;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QFrame" name="frame_for_map">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>771</width>
+         <height>431</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_create_db">
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <attribute name="title">
+      <string>Создание БД</string>
+     </attribute>
+     <widget class="QFrame" name="frame_main_db">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>51</y>
+        <width>800</width>
+        <height>550</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background-color: #EDEBE1;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QFrame" name="frame_for_map_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>130</y>
+         <width>771</width>
+         <height>311</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_forward_db">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>771</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox {
+    background-color: white; /* Серый цвет фона */
+    color: #3B383D; /* Черный цвет текста */
+    border: 1px solid #CCCCCC; /* 1 пиксель серая сплошная граница */
+    border-radius: 2px; /* Радиус скругления в пикселях */
+    padding: 5px; /* Внутренний отступ внутри элемента */
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px; /* Ширина кнопки выпадающего списка */
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+}
+
+QComboBox QAbstractItemView {
+    background-color: white; /* Белый цвет фона выпадающего списка */
+    color: #3B383D; /* Черный цвет текста в выпадающем списке */
+    border: 1px solid #CCCCCC; /* 1 пиксель серая сплошная граница выпадающего списка */
+    selection-background-color: #7A686D; /* Синий цвет фона для выбранного элемента в списке */
+    selection-color: #FFFFFF; /* Белый цвет текста для выбранного элемента в списке */
+}
+</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_reverse_db">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>771</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox {
+    background-color: white; /* Серый цвет фона */
+    color: #3B383D; /* Черный цвет текста */
+    border: 1px solid #CCCCCC; /* 1 пиксель серая сплошная граница */
+    border-radius: 2px; /* Радиус скругления в пикселях */
+    padding: 5px; /* Внутренний отступ внутри элемента */
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px; /* Ширина кнопки выпадающего списка */
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+}
+
+QComboBox QAbstractItemView {
+    background-color: white; /* Белый цвет фона выпадающего списка */
+    color: #3B383D; /* Черный цвет текста в выпадающем списке */
+    border: 1px solid #CCCCCC; /* 1 пиксель серая сплошная граница выпадающего списка */
+    selection-background-color: #7A686D; /* Синий цвет фона для выбранного элемента в списке */
+    selection-color: #FFFFFF; /* Белый цвет текста для выбранного элемента в списке */
+}
+</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>42</y>
+         <width>771</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Выберите маршрут</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>103</y>
+         <width>771</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Выберите обратный маршрут (не обязательно)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_head_db">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background-color: #8B808D;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QToolButton" name="toolButton_create_db">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>10</y>
+         <width>571</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QToolButton {
+    background-color: white; /* цвет фона */
+    color: #3B383D; /* цвет текста */
+	border: 1px solid #3B383D;
+    border-radius: 2px; /* Радиус скругления в пикселях */
+}
+QToolButton:hover {
+    background-color: #3B383D; /* цвет фона */
+    color: white; /* цвет текста */
+	border: 1px solid white;
+    border-radius: 2px; /* Радиус скругления в пикселях */
+}</string>
+       </property>
+       <property name="text">
+        <string>Создать БД</string>
+       </property>
+       <property name="autoRepeat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_db_index">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>191</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	background-color: white; /* Красный цвет фона */
+    color: black; /* Белый цвет текста */
+	border: 1px solid #3B383D;
+    border-radius: 2px; /* Радиус скругления в пикселях */
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>Начальный индекс остановок в БД</string>
+       </property>
+       <property name="cursorMoveStyle">
+        <enum>Qt::LogicalMoveStyle</enum>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_create_voice">
+     <attribute name="title">
+      <string>Создание озвучки</string>
+     </attribute>
+     <widget class="QFrame" name="frame_head_voice">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>800</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background-color: #8B808D;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QToolButton" name="toolButton_create_voice">
+       <property name="geometry">
+        <rect>
+         <x>460</x>
+         <y>10</y>
+         <width>321</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QToolButton {
+    background-color: white; /* цвет фона */
+    color: #3B383D; /* цвет текста */
+	border: 1px solid #3B383D;
+    border-radius: 2px; /* Радиус скругления в пикселях */
+}
+QToolButton:hover {
+    background-color: #3B383D; /* цвет фона */
+    color: white; /* цвет текста */
+	border: 1px solid white;
+    border-radius: 2px; /* Радиус скругления в пикселях */
+}</string>
+       </property>
+       <property name="text">
+        <string>Создать озвучку для остановок</string>
+       </property>
+       <property name="autoRepeat">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_token_voice">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>441</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	background-color: white; /* Красный цвет фона */
+    color: black; /* Белый цвет текста */
+	border: 1px solid #3B383D;
+    border-radius: 2px; /* Радиус скругления в пикселях */
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>Ключ API</string>
+       </property>
+       <property name="cursorMoveStyle">
+        <enum>Qt::LogicalMoveStyle</enum>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_main_voice">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>51</y>
+        <width>800</width>
+        <height>550</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	background-color: #EDEBE1;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QFrame" name="frame_for_map_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>130</y>
+         <width>771</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_forward_voice">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>771</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox {
+    background-color: white; /* Серый цвет фона */
+    color: #3B383D; /* Черный цвет текста */
+    border: 1px solid #CCCCCC; /* 1 пиксель серая сплошная граница */
+    border-radius: 2px; /* Радиус скругления в пикселях */
+    padding: 5px; /* Внутренний отступ внутри элемента */
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px; /* Ширина кнопки выпадающего списка */
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+}
+
+QComboBox QAbstractItemView {
+    background-color: white; /* Белый цвет фона выпадающего списка */
+    color: #3B383D; /* Черный цвет текста в выпадающем списке */
+    border: 1px solid #CCCCCC; /* 1 пиксель серая сплошная граница выпадающего списка */
+    selection-background-color: #7A686D; /* Синий цвет фона для выбранного элемента в списке */
+    selection-color: #FFFFFF; /* Белый цвет текста для выбранного элемента в списке */
+}
+</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="comboBox_reverse_voice">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>771</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox {
+    background-color: white; /* Серый цвет фона */
+    color: #3B383D; /* Черный цвет текста */
+    border: 1px solid #CCCCCC; /* 1 пиксель серая сплошная граница */
+    border-radius: 2px; /* Радиус скругления в пикселях */
+    padding: 5px; /* Внутренний отступ внутри элемента */
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px; /* Ширина кнопки выпадающего списка */
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+}
+
+QComboBox QAbstractItemView {
+    background-color: white; /* Белый цвет фона выпадающего списка */
+    color: #3B383D; /* Черный цвет текста в выпадающем списке */
+    border: 1px solid #CCCCCC; /* 1 пиксель серая сплошная граница выпадающего списка */
+    selection-background-color: #7A686D; /* Синий цвет фона для выбранного элемента в списке */
+    selection-color: #FFFFFF; /* Белый цвет текста для выбранного элемента в списке */
+}
+</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>42</y>
+         <width>771</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Выберите маршрут</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>103</y>
+         <width>771</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Выберите обратный маршрут (не обязательно)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>804</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
